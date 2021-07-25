@@ -1,8 +1,5 @@
 ﻿using Epam_Task_2.Interfaces;
 using Epam_Task_2.Semitrailers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml;
 
 namespace Epam_Task_2.Parser
