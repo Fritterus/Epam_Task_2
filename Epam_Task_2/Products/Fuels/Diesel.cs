@@ -9,5 +9,19 @@ namespace Epam_Task_2.Products.Fuels
         public string Name => "Diesel";
         public int Quantity => throw new NotImplementedException();
         public double WeightPerUnit => throw new NotImplementedException();
+
+        public override bool Equals(object obj)
+        {
+            return obj is Diesel diesel &&
+                   Type == diesel.Type &&
+                   Name == diesel.Name &&
+                   Quantity == diesel.Quantity &&
+                   WeightPerUnit == diesel.WeightPerUnit;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Type, Name, Quantity, WeightPerUnit);
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Epam_Task_2.Interfaces;
+using System;
+using System.Collections.Generic;
 
 namespace Epam_Task_2.Tractors
 {
@@ -31,5 +33,36 @@ namespace Epam_Task_2.Tractors
         public double FifthWheelLoad => 16.5;
 
         public double FullWeight => 44;
+
+        public override bool Equals(object obj)
+        {
+            return obj is ActrosLS lS &&
+                   EqualityComparer<ISemitrailer>.Default.Equals(_semitrailer, lS._semitrailer) &&
+                   EqualityComparer<ISemitrailer>.Default.Equals(Semitrailer, lS.Semitrailer) &&
+                   Weight == lS.Weight &&
+                   WheelFormule == lS.WheelFormule &&
+                   FuelCapacity == lS.FuelCapacity &&
+                   EngineVolume == lS.EngineVolume &&
+                   Cabin == lS.Cabin &&
+                   FifthWheelHeight == lS.FifthWheelHeight &&
+                   FifthWheelLoad == lS.FifthWheelLoad &&
+                   FullWeight == lS.FullWeight;
+        }
+
+        public override int GetHashCode()
+        {
+            HashCode hash = new HashCode();
+            hash.Add(_semitrailer);
+            hash.Add(Semitrailer);
+            hash.Add(Weight);
+            hash.Add(WheelFormule);
+            hash.Add(FuelCapacity);
+            hash.Add(EngineVolume);
+            hash.Add(Cabin);
+            hash.Add(FifthWheelHeight);
+            hash.Add(FifthWheelLoad);
+            hash.Add(FullWeight);
+            return hash.ToHashCode();
+        }
     }
 }

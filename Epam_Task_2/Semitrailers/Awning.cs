@@ -42,5 +42,22 @@ namespace Epam_Task_2.Semitrailers
             }
             else throw new Exception("This product is not suitable");
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Awning awning &&
+                   Type == awning.Type &&
+                   WheelFormula == awning.WheelFormula &&
+                   MaxCapacity == awning.MaxCapacity &&
+                   BodyVolume == awning.BodyVolume &&
+                   DischargeDirection == awning.DischargeDirection &&
+                   FifthWheelHeight == awning.FifthWheelHeight &&
+                   BodyLength == awning.BodyLength;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Type, WheelFormula, MaxCapacity, BodyVolume, DischargeDirection, FifthWheelHeight, BodyLength);
+        }
     }
 }

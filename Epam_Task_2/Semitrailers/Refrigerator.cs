@@ -42,5 +42,22 @@ namespace Epam_Task_2.Semitrailers
             }
             else throw new Exception("This product is not suitable");
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Refrigerator refrigerator &&
+                   Type == refrigerator.Type &&
+                   WheelFormula == refrigerator.WheelFormula &&
+                   MaxCapacity == refrigerator.MaxCapacity &&
+                   BodyVolume == refrigerator.BodyVolume &&
+                   DischargeDirection == refrigerator.DischargeDirection &&
+                   FifthWheelHeight == refrigerator.FifthWheelHeight &&
+                   BodyLength == refrigerator.BodyLength;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Type, WheelFormula, MaxCapacity, BodyVolume, DischargeDirection, FifthWheelHeight, BodyLength);
+        }
     }
 }

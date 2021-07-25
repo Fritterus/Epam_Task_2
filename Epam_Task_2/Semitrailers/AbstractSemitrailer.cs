@@ -62,5 +62,46 @@ namespace Epam_Task_2.Semitrailers
             }
             else throw new Exception("Impossible to add product");
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is AbstractSemitrailer semitrailer &&
+                   _type == semitrailer._type &&
+                   _wheelFormula == semitrailer._wheelFormula &&
+                   _currentCapacity == semitrailer._currentCapacity &&
+                   _maxCapacity == semitrailer._maxCapacity &&
+                   _bodyVolume == semitrailer._bodyVolume &&
+                   _dischargeDirection == semitrailer._dischargeDirection &&
+                   _fifthWheelHeight == semitrailer._fifthWheelHeight &&
+                   _bodyLength == semitrailer._bodyLength &&
+                   Type == semitrailer.Type &&
+                   WheelFormula == semitrailer.WheelFormula &&
+                   MaxCapacity == semitrailer.MaxCapacity &&
+                   BodyVolume == semitrailer.BodyVolume &&
+                   DischargeDirection == semitrailer.DischargeDirection &&
+                   FifthWheelHeight == semitrailer.FifthWheelHeight &&
+                   BodyLength == semitrailer.BodyLength;
+        }
+
+        public override int GetHashCode()
+        {
+            HashCode hash = new HashCode();
+            hash.Add(_type);
+            hash.Add(_wheelFormula);
+            hash.Add(_currentCapacity);
+            hash.Add(_maxCapacity);
+            hash.Add(_bodyVolume);
+            hash.Add(_dischargeDirection);
+            hash.Add(_fifthWheelHeight);
+            hash.Add(_bodyLength);
+            hash.Add(Type);
+            hash.Add(WheelFormula);
+            hash.Add(MaxCapacity);
+            hash.Add(BodyVolume);
+            hash.Add(DischargeDirection);
+            hash.Add(FifthWheelHeight);
+            hash.Add(BodyLength);
+            return hash.ToHashCode();
+        }
     }
 }
