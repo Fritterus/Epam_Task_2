@@ -1,5 +1,8 @@
 ﻿namespace Epam_Task_2.Interfaces
 {
+    /// <summary>
+    /// This interface describing tractor
+    /// </summary>
     internal interface ITractor
     {
         ISemitrailer Semitrailer { get; set; }

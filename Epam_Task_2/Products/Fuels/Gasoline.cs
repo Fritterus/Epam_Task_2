@@ -3,6 +3,9 @@ using System;
 
 namespace Epam_Task_2.Products.Fuels
 {
+    /// <summary>
+    /// This class describing gasoline product
+    /// </summary>
     internal class Gasoline : IProduct
     {
         public string Type => "Fuel";

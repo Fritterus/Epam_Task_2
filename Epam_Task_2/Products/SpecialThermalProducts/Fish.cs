@@ -3,6 +3,9 @@ using System;
 
 namespace Epam_Task_2.Products.SpecialThermalProducts
 {
+    /// <summary>
+    /// This class describing fish product
+    /// </summary>
     internal class Fish : IProduct, ISpecialThermal
     {
         public string Type => "Termal";

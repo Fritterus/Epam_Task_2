@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace Epam_Task_2.Tractors
 {
+    /// <summary>
+    /// This class describing DAF tractor
+    /// </summary>
     internal class DAF : ITractor
     {
         private ISemitrailer _semitrailer;

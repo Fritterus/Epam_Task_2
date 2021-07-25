@@ -6,6 +6,9 @@ using System.Reflection;
 
 namespace Epam_Task2
 {
+    /// <summary>
+    /// This class describing car park: all available semitrailers and tractos
+    /// </summary>
     internal class CarPark
     {
         public IEnumerable<Type> Semitrailers = Assembly.GetAssembly(typeof(ISemitrailer))

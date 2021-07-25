@@ -3,21 +3,34 @@ using System;
 
 namespace Epam_Task_2.Semitrailers
 {
+    /// <summary>
+    /// This class describing awning semitrailer
+    /// </summary>
     internal class Awning : ISemitrailer
     {
+        private double _currentCapacity = 0;
         public string Type => "Awning";
 
         public string WheelFormula => "6x2-2";
 
+        /// <summary>
+        /// Method for getting current capacity of awning semitrailer
+        /// </summary>
+        /// <returns>current capacity</returns>
         public double GetCurrentCapacity()
         {
-            return 0;
+            return _currentCapacity;
         }
+
+        /// <summary>
+        /// Method for setting current capacity of awning semitrailer
+        /// </summary>
+        /// <param name="value">current capacity value</param>
         public void SetCurrentCapacity(double value)
         {
             if (value > 0)
             {
-                SetCurrentCapacity(value);
+                _currentCapacity = value;
             }
         }
         public double MaxCapacity => 35.3;
@@ -30,6 +43,10 @@ namespace Epam_Task_2.Semitrailers
 
         public double BodyLength => 8.4;
 
+        /// <summary>
+        /// Method for adding product in awning semitrailer
+        /// </summary>
+        /// <param name="product">product</param>
         public void AddProduct(IProduct product)
         {
             if (product.Type == "Chemical")

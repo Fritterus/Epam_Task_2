@@ -1,5 +1,8 @@
 ﻿namespace Epam_Task_2.Interfaces
 {
+    /// <summary>
+    /// This interface describing product
+    /// </summary>
     internal interface IProduct
     {
         public string Type { get; }

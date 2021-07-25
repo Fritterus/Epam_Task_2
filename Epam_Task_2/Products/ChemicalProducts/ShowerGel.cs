@@ -3,6 +3,9 @@ using System;
 
 namespace Epam_Task_2.Products.ChemicalProducts
 {
+    /// <summary>
+    /// This class describing shower gel product
+    /// </summary>
     internal class ShowerGel : IProduct
     {
         public string Type => "Chemical";

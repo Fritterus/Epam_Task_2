@@ -3,6 +3,9 @@ using System;
 
 namespace Epam_Task_2.Products.ChemicalProducts
 {
+    /// <summary>
+    /// This class describing toothpaste product
+    /// </summary>
     internal class Toothpaste : IProduct
     {
         public string Type => "Chemical";

@@ -3,22 +3,30 @@ using System;
 
 namespace Epam_Task_2.Semitrailers
 {
+    /// <summary>
+    /// This class describing cistern semitrailer
+    /// </summary>
     internal class Cistern : ISemitrailer
     {
+        private double _currentCapacity = 0;
         public string Type => "Cistern";
         public string WheelFormula => "6x6";
         public double MaxCapacity => 33.65;
 
+        /// <summary>
+        /// Method for getting current capacity of cistern semitrailer
+        /// </summary>
+        /// <returns>current capacity</returns>
         public double GetCurrentCapacity()
         {
-            return 0;
+            return _currentCapacity;
         }
 
         public void SetCurrentCapacity(double value)
         {
             if (value > 0)
             {
-                SetCurrentCapacity(value);
+                _currentCapacity = value;
             }
         }
         public double BodyVolume => 30;
@@ -26,6 +34,10 @@ namespace Epam_Task_2.Semitrailers
         public double FifthWheelHeight => 1.35;
         public double BodyLength => 8.44;
 
+        /// <summary>
+        /// Method for adding product in cistern semitrailer
+        /// </summary>
+        /// <param name="product">product</param>
         public void AddProduct(IProduct product)
         {
             if (product.Type == "Fuel")

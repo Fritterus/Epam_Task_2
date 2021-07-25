@@ -3,17 +3,31 @@ using System;
 
 namespace Epam_Task_2.Semitrailers
 {
+    /// <summary>
+    /// This class describing abstract semitrailer
+    /// </summary>
     internal class AbstractSemitrailer : ISemitrailer
     {
         private readonly string _type;
         private readonly string _wheelFormula;
-        private readonly double _currentCapacity;
+        private double _currentCapacity;
         private readonly double _maxCapacity;
         private readonly double _bodyVolume;
         private readonly string _dischargeDirection;
         private readonly double _fifthWheelHeight;
         private readonly double _bodyLength;
 
+        /// <summary>
+        /// Constructor initializes abstract semitrailer parameter
+        /// </summary>
+        /// <param name="type">semitrailer type</param>
+        /// <param name="wheelFormula">semitrailer wheel formula</param>
+        /// <param name="currentCapacity">semitrailer current capacity</param>
+        /// <param name="maxCapacity">semitrailer max capacity</param>
+        /// <param name="bodyVolume">semitrailer body volume</param>
+        /// <param name="dischargeDirection">semitrailer discharge direction</param>
+        /// <param name="fifthWheelHeight">semitrailer fifth wheel height</param>
+        /// <param name="bodyLength">semitrailer body length</param>
         public AbstractSemitrailer(string type,
                                    string wheelFormula,
                                    double currentCapacity,
@@ -36,16 +50,24 @@ namespace Epam_Task_2.Semitrailers
         public string Type => _type;
         public string WheelFormula => _wheelFormula;
 
+        /// <summary>
+        /// Method for getting current capacity of abstract semitrailer
+        /// </summary>
+        /// <returns>current capacity</returns>
         public double GetCurrentCapacity()
         {
             return _currentCapacity;
         }
 
+        /// <summary>
+        /// Method for setting current capacity of abstract semitrailer
+        /// </summary>
+        /// <param name="value">current capacity value</param>
         public void SetCurrentCapacity(double value)
         {
             if (value > 0)
             {
-                SetCurrentCapacity(value);
+                _currentCapacity = value;
             }
         }
         public double MaxCapacity => _maxCapacity;
@@ -54,6 +76,10 @@ namespace Epam_Task_2.Semitrailers
         public double FifthWheelHeight => _fifthWheelHeight;
         public double BodyLength => _bodyLength;
 
+        /// <summary>
+        /// Method for adding product in abstract semitrailer
+        /// </summary>
+        /// <param name="product">product</param>
         public void AddProduct(IProduct product)
         {
             if ((GetCurrentCapacity() + product.Quantity * product.WeightPerUnit) < MaxCapacity)

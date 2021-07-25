@@ -4,8 +4,16 @@ using System.Xml;
 
 namespace Epam_Task_2.Parser
 {
+    /// <summary>
+    /// This class describing xml parser
+    /// </summary>
     internal static class ParserXml
     {
+        /// <summary>
+        /// Method for parse to xml element from object of type semitrailer
+        /// </summary>
+        /// <param name="xmlWriter">xml writer</param>
+        /// <param name="semitrailer">current semitrailer</param>
         public static void ParseToXmlElementFromSemitrailer(XmlTextWriter xmlWriter, ISemitrailer semitrailer)
         {
             xmlWriter.WriteStartElement(semitrailer.GetType().Name);
@@ -18,6 +26,11 @@ namespace Epam_Task_2.Parser
             xmlWriter.WriteEndElement();
         }
         
+        /// <summary>
+        /// Method for parse to object of type semitrailer from xml element
+        /// </summary>
+        /// <param name="xmlReader">xml reader</param>
+        /// <returns>semitrailer</returns>
         public static ISemitrailer ParseToSemitrailerFromXmlElement(XmlTextReader xmlReader)
         {
             ISemitrailer semitrailer = null;

@@ -3,6 +3,9 @@ using System;
 
 namespace Epam_Task_2.Products.ChemicalProducts
 {
+    /// <summary>
+    /// This class describing soap product
+    /// </summary>
     internal class Soap : IProduct
     {
         public string Type => "Chemical";

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace Epam_Task_2.Tractors
 {
+    /// <summary>
+    /// This class describing actrosLS tractor
+    /// </summary>
     internal class ActrosLS : ITractor
     {
         private ISemitrailer _semitrailer;
