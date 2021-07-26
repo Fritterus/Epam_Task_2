@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tractors>
+  <ActrosLS>
+    <Weight>7,6</Weight>
+    <WheelFormule>6x2-2</WheelFormule>
+    <FuelCapacity>650</FuelCapacity>
+    <EngineVolume>12</EngineVolume>
+    <Cabin>High</Cabin>
+    <FifthWheelHeight>1,15</FifthWheelHeight>
+    <FifthWheelLoad>16,5</FifthWheelLoad>
+    <FullWeight>44</FullWeight>
+  </ActrosLS>
+  <DAF>
+    <Weight>7,8</Weight>
+    <WheelFormule>6x6</WheelFormule>
+    <FuelCapacity>650</FuelCapacity>
+    <EngineVolume>12</EngineVolume>
+    <Cabin>Low</Cabin>
+    <FifthWheelHeight>1,25</FifthWheelHeight>
+    <FifthWheelLoad>16,8</FifthWheelLoad>
+    <FullWeight>46</FullWeight>
+  </DAF>
+</Tractors>

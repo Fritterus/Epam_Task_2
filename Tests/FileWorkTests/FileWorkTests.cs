@@ -9,10 +9,11 @@ using System.IO;
 
 namespace Tests.FileWorkTests
 {
-    public class FileWorkTest
+    public class FileWorkTests
     {
 
         private List<ISemitrailer> _semitrailers;
+        private List<ITractor> _tractors;
 
         [SetUp]
         public void Setup()
@@ -21,18 +22,23 @@ namespace Tests.FileWorkTests
             var cistern = new Cistern();
             var refrigerator = new Refrigerator();
 
-            var actrosLS = new ActrosLS();
-            var DAF = new DAF();
-
             _semitrailers = new List<ISemitrailer>();
 
             _semitrailers.Add(awning);
             _semitrailers.Add(cistern);
             _semitrailers.Add(refrigerator);
+
+            var actrosLS = new ActrosLS();
+            var DAF = new DAF();
+
+            _tractors = new List<ITractor>();
+            _tractors.Add(actrosLS);
+            _tractors.Add(DAF);
+            
         }
 
         [Test]
-        public void Test1()
+        public void WriteSemitrailerXmlWriter_WhenObjectIsSemitrailer_ShouldWriteAllSemitrailers()
         {
             var filePath = @"..\..\..\..\Epam_Task_2\Resources\SemitrailerList.xml";
             FileExtention.WriteSemitrailerXmlWriter(_semitrailers, filePath);
@@ -42,12 +48,31 @@ namespace Tests.FileWorkTests
         }
 
         [Test]
-        public void Test2()
+        public void WriteTractorXmlWriter_WhenObjectIsTractor_ShouldWriteAllTractors()
+        {
+            var filePath = @"..\..\..\..\Epam_Task_2\Resources\TractorList.xml";
+            FileExtention.WriteTractorXmlWriter(_tractors, filePath);
+
+            string textFromFile = File.ReadAllText(filePath);
+            textFromFile.Should().NotBeEmpty();
+        }
+
+        [Test]
+        public void Test_ReadSemitrailerXmlReader()
         {
             var filePath = @"..\..\..\..\Epam_Task_2\Resources\SemitrailerList.xml";
             var semitrailers = FileExtention.ReadSemitrailerXmlReader(filePath);
             semitrailers.Should().NotBeNullOrEmpty();
             semitrailers.Should().BeEquivalentTo(_semitrailers);
+        }
+
+        [Test]
+        public void Test_ReadTractorXmlReader()
+        {
+            var filePath = @"..\..\..\..\Epam_Task_2\Resources\TractorList.xml";
+            var tractors = FileExtention.ReadTractorXmlReader(filePath);
+            tractors.Should().NotBeNullOrEmpty();
+            tractors.Should().BeEquivalentTo(_tractors);
         }
     }
 }
