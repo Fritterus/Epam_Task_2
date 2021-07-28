@@ -1,7 +1,6 @@
 using Epam_Task_2;
 using FluentAssertions;
 using NUnit.Framework;
-using System;
 
 namespace Tests.IndustryTests
 {
