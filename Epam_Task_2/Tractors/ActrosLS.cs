@@ -19,6 +19,10 @@ namespace Epam_Task_2.Tractors
                 {
                     _semitrailer = value;
                 }
+                else
+                {
+                    throw new Exception("This semitrailer cant be attached to this tractor");
+                }
             }
         }
         public double Weight => 7.6;

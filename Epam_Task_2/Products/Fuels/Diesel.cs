@@ -10,8 +10,8 @@ namespace Epam_Task_2.Products.Fuels
     {
         public string Type => "Fuel";
         public string Name => "Diesel";
-        public int Quantity => throw new NotImplementedException();
-        public double WeightPerUnit => throw new NotImplementedException();
+        public int Quantity => 120;
+        public double WeightPerUnit => 0.74;
 
         public override bool Equals(object obj)
         {

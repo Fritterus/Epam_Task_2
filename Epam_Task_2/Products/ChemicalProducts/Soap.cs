@@ -10,8 +10,8 @@ namespace Epam_Task_2.Products.ChemicalProducts
     {
         public string Type => "Chemical";
         public string Name => "Soap";
-        public int Quantity => 340;
-        public double WeightPerUnit => 1.44;
+        public int Quantity => 80;
+        public double WeightPerUnit => 0.44;
 
         public override bool Equals(object obj)
         {

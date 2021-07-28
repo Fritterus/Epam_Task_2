@@ -74,5 +74,43 @@ namespace Tests.FileWorkTests
             tractors.Should().NotBeNullOrEmpty();
             tractors.Should().BeEquivalentTo(_tractors);
         }
+
+        [Test]
+        public void Test_ReadSimtrailerStreamReader()
+        {
+            var filePath = @"..\..\..\..\Epam_Task_2\Resources\SemitrailerList.xml";
+            var semitrailers = FileExtention.ReadSemitrailersStreamReader(filePath);
+            semitrailers.Should().NotBeNullOrEmpty();
+            semitrailers.Should().BeEquivalentTo(_semitrailers);
+        }
+
+        [Test]
+        public void Test_ReadTractorStreamReader()
+        {
+            var filePath = @"..\..\..\..\Epam_Task_2\Resources\TractorList.xml";
+            var tractors = FileExtention.ReadTractorXmlReader(filePath);
+            tractors.Should().NotBeNullOrEmpty();
+            tractors.Should().BeEquivalentTo(_tractors);
+        }
+
+        [Test]
+        public void WriteSemitrailerStreamWriter_WhenObjectIsSemitrailer_ShouldWriteAllSemitrailers()
+        {
+            var filePath = @"..\..\..\..\Epam_Task_2\Resources\SemitrailerList.xml";
+            FileExtention.WriteSemitrailerStreamWriter(_semitrailers, filePath);
+
+            string textFromFile = File.ReadAllText(filePath);
+            textFromFile.Should().NotBeEmpty();
+        }
+
+        [Test]
+        public void WriteTractorStreamWriter_WhenObjectIsSemitrailer_ShouldWriteAllSemitrailers()
+        {
+            var filePath = @"..\..\..\..\Epam_Task_2\Resources\TractorList.xml";
+            FileExtention.WriteTractorStreamWriter(_tractors, filePath);
+
+            string textFromFile = File.ReadAllText(filePath);
+            textFromFile.Should().NotBeEmpty();
+        }
     }
 }

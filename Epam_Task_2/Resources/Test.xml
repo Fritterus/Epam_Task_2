@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Semitrailers>
+	<Awning>
+		<WheelFormula>6x2-2</WheelFormula>
+		<MaxCapacity>35,3</MaxCapacity>
+		<BodyVolume>30</BodyVolume>
+		<DischargeDirection>Back</DischargeDirection>
+		<FifthWheelHeight>1,52</FifthWheelHeight>
+		<BodyLength>8,4</BodyLength>
+	</Awning>
+	<Cistern>
+		<WheelFormula>6x6</WheelFormula>
+		<MaxCapacity>33,65</MaxCapacity>
+		<BodyVolume>30</BodyVolume>
+		<DischargeDirection>Back</DischargeDirection>
+		<FifthWheelHeight>1,35</FifthWheelHeight>
+		<BodyLength>8,44</BodyLength>
+	</Cistern>
+	<Refrigerator>
+		<WheelFormula>6x6</WheelFormula>
+		<MaxCapacity>36,2</MaxCapacity>
+		<BodyVolume>32</BodyVolume>
+		<DischargeDirection>Back</DischargeDirection>
+		<FifthWheelHeight>1,42</FifthWheelHeight>
+		<BodyLength>8,65</BodyLength>
+	</Refrigerator>
+</Semitrailers>
