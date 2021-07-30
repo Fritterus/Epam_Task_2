@@ -76,5 +76,16 @@ namespace Epam_Task_2.Semitrailers
         {
             return HashCode.Combine(Type, WheelFormula, MaxCapacity, BodyVolume, DischargeDirection, FifthWheelHeight, BodyLength);
         }
+
+        public override string ToString()
+        {
+            return string.Format($@"Type: {Type} 
+                                    WheelFormula: {WheelFormula} 
+                                    CurrentCapacity: {_currentCapacity}
+                                    MaxCapacity: {MaxCapacity}
+                                    BodyVolume: {BodyVolume}
+                                    DischargeDirection: {DischargeDirection}
+                                    FiftWheelHeight: {FifthWheelHeight}");
+        }
     }
 }

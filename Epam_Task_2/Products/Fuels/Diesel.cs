@@ -26,5 +26,13 @@ namespace Epam_Task_2.Products.Fuels
         {
             return HashCode.Combine(Type, Name, Quantity, WeightPerUnit);
         }
+
+        public override string ToString()
+        {
+            return string.Format($@"Type: {Type} 
+                                    Name: {Name} 
+                                    Quantity: {Quantity}
+                                    WeightPerUnit: {WeightPerUnit}");
+        }
     }
 }

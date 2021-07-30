@@ -72,5 +72,18 @@ namespace Epam_Task_2.Tractors
             hash.Add(FullWeight);
             return hash.ToHashCode();
         }
+
+        public override string ToString()
+        {
+            return string.Format($@"Semitrailer: {Semitrailer} 
+                                    Weight: {Weight} 
+                                    WheelFormule: {WheelFormule}
+                                    FuelCapacity: {FuelCapacity}
+                                    EngineVolume: {EngineVolume}
+                                    Cabin: {Cabin}
+                                    FiftWheelHeight: {FifthWheelHeight}
+                                    FifthWheelLoad: {FifthWheelLoad}
+                                    FullWeight: {FullWeight}");
+        }
     }
 }

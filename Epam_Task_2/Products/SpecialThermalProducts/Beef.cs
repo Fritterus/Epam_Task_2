@@ -30,5 +30,15 @@ namespace Epam_Task_2.Products.SpecialThermalProducts
         {
             return HashCode.Combine(Type, Name, Quantity, WeightPerUnit, MinTemperature, MaxTemperature);
         }
+
+        public override string ToString()
+        {
+            return string.Format($@"Type: {Type} 
+                                    Name: {Name} 
+                                    Quantity: {Quantity}
+                                    WeightPerUnit: {WeightPerUnit}
+                                    MinTemperature: {MinTemperature}
+                                    MaxTemperature: {MaxTemperature}");
+        }
     }
 }

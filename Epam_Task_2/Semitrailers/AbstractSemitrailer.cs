@@ -129,5 +129,16 @@ namespace Epam_Task_2.Semitrailers
             hash.Add(BodyLength);
             return hash.ToHashCode();
         }
+
+        public override string ToString()
+        {
+            return string.Format($@"Type: {_type} 
+                                    WheelFormula: {_wheelFormula} 
+                                    CurrentCapacity: {_currentCapacity}
+                                    MaxCapacity: {_maxCapacity}
+                                    BodyVolume: {_bodyVolume}
+                                    DischargeDirection: {_dischargeDirection}
+                                    FiftWheelHeight: {_fifthWheelHeight}");
+        }
     }
 }
